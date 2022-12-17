@@ -11,9 +11,9 @@ app.get("/", (req, res) => {
 
 // get the infromation from the form and do action
 app.post("/", (req, res) => {
-  //get the first Numer
+  //get the first Number
   let fNum = req.body.fnum;
-  //get the second number
+  //get the second Number
   let sNum = req.body.snum;
   // get the operation:
   let operation = req.body.operation;
@@ -45,8 +45,9 @@ app.post("/", (req, res) => {
     result = 0;
   }
 
-
-  // show the result in the page:
+  //After geting the information to server side, and output the result, send the result to the client side 
+  // Show the result in the page:
+  // Send the result to the client side 
   res.send("The result of calculation is " + result);
 })
 

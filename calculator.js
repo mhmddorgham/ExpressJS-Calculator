@@ -15,8 +15,36 @@ app.post("/", (req, res) => {
   let fNum = req.body.fnum;
   //get the second number
   let sNum = req.body.snum;
-  //add both numbers
-  let result = +fNum + +sNum;
+  // get the operation:
+  let operation = req.body.operation;
+  //add if statements:
+  let result = 0;
+  //add operation
+  if (operation == "add") {
+    //add both numbers
+    result = +fNum + +sNum;
+  }
+  //multiply operation
+  else if (operation == "multiply") {
+    //add both numbers
+    result = +fNum * +sNum;
+  }
+  //subtact operation
+  else if (operation == "subtact") {
+    //add both numbers
+    result = +fNum - +sNum;
+  }
+
+  //divide operation
+  else if (operation == "divide") {
+    //add both numbers
+    result = +fNum / +sNum;
+  }
+  //other:
+  else {
+    result = 0;
+  }
+
 
   // show the result in the page:
   res.send("The result of calculation is " + result);
